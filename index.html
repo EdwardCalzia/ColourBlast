@@ -2,119 +2,194 @@
 <html>
 <head>
 	<title>ColourBlast</title>
+	
 	<style>
-body {
-			background-color: #f2f2f2;
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			color: #333;
-			margin: 0;
-			padding: 0;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Saira+Condensed&display=swap');body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
 
-		h1 {
-			font-size: 28px;
-			font-weight: bold;
-			margin-top: 0;
-			margin-bottom: 20px;
-			color: #444;
-			text-align: center;
-		}
+h1 {
+  font-size: 72px;
+  margin-top: 0;
+  font-weight: 1000;
+  margin-bottom: 20px;
+  background-image: linear-gradient(60deg, #E21143, #FFB03A);
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  background: linear-gradient(to right, #f32170,
+                    #ff6b08, #cf23cf, #eedd44);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+}
 
-		form {
-			background-color: #fff;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			padding: 20px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			margin-bottom: 20px;
-		}
 
-		label {
-			font-weight: bold;
-			margin-bottom: 10px;
-			color: #666;
-		}
+form {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  
+}
 
-		input[type="file"] {
-			padding: 10px;
-			margin-bottom: 20px;
-			border-radius: 5px;
-			background-color: #fafafa;
-			color: #666;
-			font-size: 16px;
-			width: 100%;
-			max-width: 300px;
-			box-sizing: border-box;
-		}
+label {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
 
-		select {
-			padding: 10px;
-			margin-bottom: 20px;
-			border-radius: 5px;
-			background-color: #fafafa;
-			color: #666;
-			font-size: 16px;
-			width: 100%;
-			max-width: 300px;
-			box-sizing: border-box;
-		}
+input[type="file"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+  color: #666;
+  border-color: #cf2387;
 
-		button {
-			padding: 10px 20px;
-			border: none;
-			border-radius: 5px;
-			background-color: #444;
-			color: #fff;
-			font-size: 16px;
-			font-weight: bold;
-			cursor: pointer;
-			transition: background-color 0.2s ease-in-out;
-			margin-bottom: 20px;
-		}
+  font-size: 18px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  border-width: 3px;
+}
 
-		button:hover {
-			background-color: #333;
-		}
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+  color: #666;
+  font-size: 18px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  
+}
 
-		.output {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			margin-bottom: 20px;
-			max-height: 200px;
-			overflow-y: auto;
-		}
+.output {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+}
 
-		.output img {
-			max-width: 60px;
-			width: auto;
-			max-height: 60px;
-			height: auto;
-			margin: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			background-color: #fff;
-		}
+.output img {
+  max-width: 60px;
+  width: auto;
+  max-height: 60px;
+  height: auto;
+  margin: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
 
-		.output div {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin: 10px;
-		}
+.output div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
 
-		.output div p {
-			margin: 5px 0;
-			font-size: 14px;
-			color: #888;
-		}
+.output div p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.button,
+.button *,
+.button :after,
+.button :before,
+.button:after,
+.button:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: rgb(255, 0, 234);
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.button:disabled {
+  cursor: default;
+}
+.button:-moz-focusring {
+  outline: auto;
+}
+.button svg {
+  display: block;
+  vertical-align: middle;
+}
+.button [hidden] {
+  display: none;
+}
+.button {
+  --height: 4rem;
+  border: 2px solid;
+  box-sizing: border-box;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  height: var(--height);
+  overflow: hidden;
+  padding: 0 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+.button span {
+  font-weight: 900;
+  mix-blend-mode: difference;
+}
+.button:before {
+  --middle: calc(var(--height) / 2);
+  background: #fff;
+  content: "";
+  height: 100%;
+  left: calc(var(--height) * -1);
+  position: absolute;
+  top: 0;
+  transform: rotate(-90deg);
+  transform-origin: var(--middle) var(--middle);
+  transition: transform 0.3s;
+  width: calc(100% + var(--height));
+  z-index: -1;
+}
+.button:hover:before {
+  transform: rotate(0deg);
+}
+
+
 	</style>
 </head>
 <body>
@@ -128,9 +203,16 @@ body {
 		<option value="grayscale">Grayscale</option>
 		<option value="sepia">Sepia</option>
 		<option value="invert">Invert</option>
-	</select>
+		<option value="blur">Blur</option>
+		<option value="brightness">Brightness</option>
+		<option value="contrast">Contrast</option>
+		<option value="hue-rotate">Hue Rotate</option>
+		<option value="saturate">Saturate</option>
+		<option value="opacity">Opacity</option>
+		<option value="drop-shadow">Drop Shadow</option>
+	  </select>
 
-	<button id="generateBtn">Generate Filtered Image</button>
+	<button class="button" id="generateBtn">Generate Image</button>
 
 	<div id="output"></div>
 
@@ -170,6 +252,8 @@ body {
 						data[i + 2] = 255 - data[i + 2];
 					}
 					break;
+
+				
 			}
 
 			ctx.putImageData(imageData, 0, 0);
